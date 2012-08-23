@@ -1,3 +1,5 @@
+My personal .vim directory
+
 ## How to Use this
 
     mv ~/.vim ~/.vim.bak
