@@ -198,7 +198,7 @@ set foldmethod=indent
 
 
 " Open file for class name under cursor
-nnoremap <C-o> yiw:find <C-R>".php<CR>
+nnoremap <C-i> yiw:find <C-R>".php<CR>
 
 "==========================================
 " vim-powerline: https://github.com/Lokaltog/vim-powerline
@@ -214,4 +214,14 @@ set laststatus=2
 "hi IndentGuidesOdd  ctermbg=white
 "hi IndentGuidesEven ctermbg=lightgrey
 
-nnoremap <C-o>c yiw:find <C-r>".php<CR>
+"==========================================
+" Mouse Options
+
+" Enable mouse scrolling in all modes!
+set mouse=a
+" Set scrolling to be single-line
+":map <MouseDown> <C-Y>
+":map <S-MouseDown> <C-U>
+":map <MouseUp> <C-E>
+":map <S-MouseUp> <C-D>
+
