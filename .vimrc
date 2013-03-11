@@ -100,6 +100,9 @@ noremap <Leader>s :Scratch<CR>
 set dictionary+=~/.vim/dictionary/english-freq
 set complete+=k
 
+" Don't scan included files, it's slow!!!!
+set complete-=i
+
 " Insert <Tab> or complete identifier if the cursor is after a keyword
 " character.
 function TabOrComplete()
