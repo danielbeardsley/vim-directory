@@ -25,3 +25,6 @@
 [submodule "bundle/vim-css3-syntax"]
 	path = bundle/vim-css3-syntax
 	url = https://github.com/hail2u/vim-css3-syntax.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = git://github.com/tpope/vim-markdown.git
