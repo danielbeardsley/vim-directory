@@ -246,3 +246,12 @@ function! FindFile()
    execute "find ".fileName
 endfunction
 "==========================================
+
+
+"==========================================
+" vim-plug Plugin manager
+call plug#begin('~/.vim/plugged')
+
+Plug 'maxmellon/vim-jsx-pretty'
+
+call plug#end()

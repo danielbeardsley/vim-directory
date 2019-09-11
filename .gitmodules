@@ -43,3 +43,6 @@
 [submodule "bundle/typescript-vim"]
 	path = bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim
+[submodule "vendor/vim-plug"]
+	path = vendor/vim-plug
+	url = https://github.com/junegunn/vim-plug
