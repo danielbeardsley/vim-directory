@@ -41,6 +41,20 @@ set tabstop=3             " <Tab> move three characters.
 set textwidth=79          " Hard wrap at 79 characters.
 set virtualedit=block     " Allow the cursor to go where there's no char.
 set wildmode=longest,list " Tab completion works like bash.
+set complete=.,w,b,t      " Tab completion settings
+set spelllang=en_us       " This is Umurica!
+
+set wildignore+=*.log
+set wildignore+=Logs/**
+set wildignore+=**/.git/**
+set wildignore+=**/node_modules/**
+set wildignore+=**/vendor/**
+
+" Live dangerously
+set nobackup
+set nowritebackup
+set noswapfile
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Set some configuration variables.
@@ -58,7 +72,8 @@ let mapleader=","         " Use , instead of \ for the map leader.
 " o: Insert comment leader after hitting 'o' or 'O' in command mode.
 " n: Auto-format lists, wrapping to text *after* the list bullet char.
 " l: Don't auto-wrap if a line is already longer than textwidth.
-set formatoptions+=ronl
+set formatoptions+=ron
+set nojoinspaces          " Don't Condense '.  ' -> '. ' whne joining lines
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command-line cartography
@@ -72,8 +87,8 @@ cnoremap <Esc>f <S-Right>
 cnoremap <C-U> <C-E><C-U>
 
 " Stupid shift mistakes.
-:command W w
-:command Q q
+:command! W w
+:command! Q q
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command mode cartography
@@ -105,7 +120,7 @@ set complete-=i
 
 " Insert <Tab> or complete identifier if the cursor is after a keyword
 " character.
-function TabOrComplete()
+function! TabOrComplete()
     let col = col('.')-1
     if !col || getline('.')[col-1] !~ '\k'
         return "\<tab>"
@@ -114,6 +129,7 @@ function TabOrComplete()
      endif
 endfunction
 inoremap <Tab> <C-R>=TabOrComplete()<CR>
+
 
 " Make C-s write the buffer and return to insert mode when applicable
 inoremap <C-s> <C-O>:w<CR>
@@ -146,7 +162,7 @@ autocmd BufWinEnter * call RestoreCursor()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " My Customizations
 
-set path=.,,~/Code/**
+set path=./**
 
 " Reread configuration of Vim if .vimrc is saved {{{
 augroup VimConfig
@@ -161,12 +177,6 @@ augroup END
 imap jk <Esc>
 imap kj <Esc>
 
-" Use hjkl in insert mode
-imap <C-h> <Left>
-imap <C-j> <Down>
-imap <C-k> <Up>
-imap <C-l> <Right>
-
 " auto-insert second braces and parynthesis
 inoremap {<CR> {<CR>}<Esc>O
 inoremap ({<CR> ({<CR>});<Esc>O
@@ -176,15 +186,11 @@ set cpoptions+=$ "show dollar sign at end of text to be changed
 " Allow easy toggling of spaces / tabs mode
 nnoremap <C-t><C-t> :set invexpandtab<CR>
 
-"Highlights lines that are greater than 80 columns
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength '\%80v.\+'
-set colorcolumn=80
-
-" Create simple toggles for line numbers, paste mode, and word wrap.
-nnoremap <C-N><C-N> :set invnumber<CR>
+" Create simple toggles for line numbers, paste mode, word wrap, ...
+" nnoremap <C-N><C-N> :set invnumber<CR>
 nnoremap <C-p><C-p> :set invpaste<CR>
 nnoremap <C-w><C-w> :set invwrap<CR>
+nnoremap <leader><C-s> :set invspell<CR>
 
 " Use C-hjkl in to change windows
 nnoremap <C-h> <C-w><Left>
@@ -192,11 +198,11 @@ nnoremap <C-j> <C-w><Down>
 nnoremap <C-k> <C-w><Up>
 nnoremap <C-l> <C-w><Right>
 
+" Split windows with sanity
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <C-w>s <C-w>s<C-w>j
+
 " Folding stuff
-nnoremap <C-o> zo
-nnoremap <C-c> zc
-nnoremap <C-O> zO
-nnoremap <C-O><C-O> zR
 set foldmethod=indent
 
 
@@ -230,7 +236,7 @@ function! FindFile()
    let cursorWord = expand("<cword>")
    " Get the current file name and keep only the extension.
    let currentFile = expand("%")
-   let extPos = stridx(currentFile, ".")
+   let extPos = strridx(currentFile, ".")
 
    " Append an extension only if the current file has an extension.
    if extPos != -1
@@ -246,7 +252,10 @@ function! FindFile()
    execute "find ".fileName
 endfunction
 "==========================================
-
+"
+"==========================================
+"pman - php man pages.
+set keywordprg=pman
 
 "==========================================
 " vim-plug Plugin manager
