@@ -257,6 +257,13 @@ endfunction
 "pman - php man pages.
 set keywordprg=pman
 
+" fzf fuzzy finder
+set rtp+=/usr/share/nvim/site/plugin/fzf.vim
+nnoremap <Leader>f :FZF<CR>
+
+" open the quickfix window for the results of grep commands
+autocmd QuickFixCmdPost *grep* cwindow
+
 "==========================================
 " vim-plug Plugin manager
 call plug#begin('~/.vim/plugged')
