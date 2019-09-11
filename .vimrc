@@ -261,6 +261,7 @@ set keywordprg=pman
 " vim-plug Plugin manager
 call plug#begin('~/.vim/plugged')
 
+Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
 
 call plug#end()
