@@ -281,3 +281,5 @@ call plug#end()
 
 " set filetypes as typescriptreact
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+
+let g:ale_linters = { 'php': ['phpcs', 'psalm'] }
