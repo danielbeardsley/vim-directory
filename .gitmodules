@@ -28,9 +28,6 @@
 [submodule "bundle/vim-markdown"]
 	path = bundle/vim-markdown
 	url = git://github.com/tpope/vim-markdown.git
-[submodule "bundle/vim-lose"]
-	path = bundle/vim-lose
-	url = https://github.com/marczych/vim-lose
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
