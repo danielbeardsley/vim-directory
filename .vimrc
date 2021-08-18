@@ -253,7 +253,7 @@ function! FindFile()
    let fileName = cursorWord.extension
 
    " Open the file in the current buffer.
-   execute "find ".fileName
+   execute ":find ".fileName
 endfunction
 "==========================================
 "
