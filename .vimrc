@@ -26,7 +26,6 @@ set ignorecase            " Ignore case in regular expressions
 set incsearch             " Immediately highlight search matches.
 set modeline              " Check for a modeline.
 set noerrorbells          " No beeps on errors.
-set nohls                 " Don't highlight all regex matches.
 set nowrap                " Don't soft wrap.
 set number                " Display line numbers.
 set ruler                 " Display row, column and % of document.
