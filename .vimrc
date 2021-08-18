@@ -205,6 +205,10 @@ nnoremap <C-w>s <C-w>s<C-w>j
 " Folding stuff
 set foldmethod=indent
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Background setting
+nnoremap <leader><C-d> :set background=dark<CR>
+nnoremap <leader><C-l> :set background=light<CR>
 
 "==========================================
 " vim-powerline: https://github.com/Lokaltog/vim-powerline
