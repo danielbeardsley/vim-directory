@@ -88,6 +88,7 @@ cnoremap <C-U> <C-E><C-U>
 " Stupid shift mistakes.
 :command! W w
 :command! Q q
+:command! Qa qa
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Command mode cartography
