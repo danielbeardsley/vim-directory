@@ -280,6 +280,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'hashivim/vim-terraform'
 
 call plug#end()
 
@@ -287,3 +288,5 @@ call plug#end()
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
 let g:ale_linters = { 'php': ['phpcs', 'psalm'] }
+
+let g:terraform_fmt_on_save=1
