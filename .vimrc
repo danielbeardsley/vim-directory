@@ -287,7 +287,10 @@ call plug#end()
 " set filetypes as typescriptreact
 autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
 
+let g:ale_linters = { 'js': ['eslint'] }
 let g:ale_linters = { 'php': ['phpcs', 'psalm'] }
 let g:ale_fixers = { 'php': ['phpcbf'] }
 
 let g:terraform_fmt_on_save=1
+
+let g:psalm_langserver_options = "--threads=2"
