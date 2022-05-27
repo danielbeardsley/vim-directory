@@ -43,6 +43,3 @@
 [submodule "vendor/vim-plug"]
 	path = vendor/vim-plug
 	url = https://github.com/junegunn/vim-plug
-[submodule "bundle/ale"]
-	path = bundle/ale
-	url = https://github.com/dense-analysis/ale.git

@@ -277,6 +277,7 @@ Plug 'Quramy/tsuquyomi'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'dense-analysis/ale'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
