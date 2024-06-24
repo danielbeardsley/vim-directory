@@ -246,6 +246,13 @@ endfunction
 "pman - php man pages.
 set keywordprg=pman
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntax Options
+
+" Remove '-' from list of word chars. This means that if (X) is your cursor, 
+" $bl(X)ah->thing() then '*" will search for $blah instead of $blah-
+set isk-=-
+
 " fzf fuzzy finder
 set rtp+=/usr/share/nvim/site/plugin/fzf.vim
 nnoremap <Leader>f :FZF<CR>
