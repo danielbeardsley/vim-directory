@@ -166,10 +166,6 @@ augroup END
 imap jk <Esc>
 imap kj <Esc>
 
-" auto-insert second braces and parynthesis
-inoremap {<CR> {<CR>}<Esc>O
-inoremap ({<CR> ({<CR>});<Esc>O
-inoremap <<<<CR> <<<EOT<CR>EOT;<Esc>O<C-TAB><C-TAB><C-TAB>
 set cpoptions+=$ "show dollar sign at end of text to be changed
 
 " Allow easy toggling of spaces / tabs mode
