@@ -280,7 +280,8 @@ Plug 'TysonAndre/php-vim-syntax'
 call plug#end()
 
 " set filetypes as typescriptreact
-autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescriptreact
+autocmd BufNewFile,BufRead *.tsx,*.jsx,*.js set filetype=typescriptreact
+autocmd BufNewFile,BufRead *.js set filetype=typescript
 
 let g:ale_linters = { 'js': ['eslint'] }
 let g:ale_linters = { 'php': ['phpcs', 'psalm'] }
