@@ -118,17 +118,6 @@ set complete+=k
 " Don't scan included files, it's slow!!!!
 set complete-=i
 
-" Insert <Tab> or complete identifier if the cursor is after a keyword
-" character.
-function! TabOrComplete()
-    let col = col('.')-1
-    if !col || getline('.')[col-1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<C-N>"
-     endif
-endfunction
-inoremap <Tab> <C-R>=TabOrComplete()<CR>
 
 
 " Make C-s write the buffer and return to insert mode when applicable
