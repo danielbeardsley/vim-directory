@@ -203,7 +203,7 @@ let g:Powerline_symbols="compatible"
 set laststatus=2
 
 "==========================================
-" vim-indent-guides : 
+" vim-indent-guides :
 "hi IndentGuidesOdd  ctermbg=black
 "hi IndentGuidesEven ctermbg=darkgrey
 "hi IndentGuidesOdd  ctermbg=white
@@ -249,7 +249,7 @@ set keywordprg=pman
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax Options
 
-" Remove '-' from list of word chars. This means that if (X) is your cursor, 
+" Remove '-' from list of word chars. This means that if (X) is your cursor,
 " $bl(X)ah->thing() then '*" will search for $blah instead of $blah-
 set isk-=-
 
@@ -275,6 +275,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'github/copilot.vim'
+Plug 'TysonAndre/php-vim-syntax'
 
 call plug#end()
 
