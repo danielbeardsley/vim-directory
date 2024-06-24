@@ -283,9 +283,21 @@ call plug#end()
 autocmd BufNewFile,BufRead *.tsx,*.jsx,*.js set filetype=typescriptreact
 autocmd BufNewFile,BufRead *.js set filetype=typescript
 
-let g:ale_linters = { 'js': ['eslint'] }
-let g:ale_linters = { 'php': ['phpcs', 'psalm'] }
-let g:ale_fixers = { 'php': ['phpcbf'] }
+let g:ale_linters = {
+\  'php': ['phpcs', 'psalm'],
+\  'javascript': ['eslint'],
+\  'typescript': ['eslint'],
+\  'css': ['prettier'],
+\  'less': ['prettier']
+\}
+let g:ale_fixers = {
+\  'javascript': ['eslint', 'prettier'],
+\  'typescript': ['eslint', 'prettier'],
+\  'css': ['prettier', 'prettier'],
+\  'less': ['prettier'],
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\}
+let g:ale_fix_on_save = 1
 
 let g:terraform_fmt_on_save=1
 
