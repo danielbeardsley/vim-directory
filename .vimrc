@@ -271,7 +271,11 @@ autocmd QuickFixCmdPost *grep* cwindow
 call plug#begin('~/.vim/plugged')
 
 Plug 'leafgarland/typescript-vim'
-Plug 'Quramy/tsuquyomi'
+" TypeScript intelligence via Neovim's built-in LSP.
+" v1.8.0 is the last nvim-lspconfig release that supports Neovim 0.9.
+if has('nvim')
+  Plug 'neovim/nvim-lspconfig', { 'tag': 'v1.8.0' }
+endif
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
@@ -294,10 +298,13 @@ colorscheme solarized8
 autocmd BufNewFile,BufRead *.tsx,*.jsx,*.js set filetype=typescriptreact
 autocmd BufNewFile,BufRead *.js set filetype=typescript
 
+" typescriptreact is listed so ALE uses eslint only; its default tsserver
+" linter would duplicate the diagnostics from the LSP client below.
 let g:ale_linters = {
 \  'php': ['phpcs', 'psalm'],
 \  'javascript': ['eslint'],
 \  'typescript': ['eslint'],
+\  'typescriptreact': ['eslint'],
 \  'css': ['prettier'],
 \  'less': ['prettier']
 \}
@@ -311,6 +318,10 @@ let g:ale_fixers = {
 let g:ale_fix_on_save = 1
 
 let g:terraform_fmt_on_save=1
+
+if has('nvim')
+  source ~/.vim/nvim-lsp.vim
+endif
 
 let g:psalm_langserver_options = "--threads=2"
 
