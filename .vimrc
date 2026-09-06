@@ -127,10 +127,16 @@ nnoremap <C-s> :w<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlighting
 
-syntax enable
-" This should automatically be determined from the terminal type...
-set t_Co=16
-colorscheme solarized
+set t_Co=256
+" Enable 24-bit True Color support
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic options : https://github.com/scrooloose/syntastic/
@@ -197,7 +203,7 @@ nnoremap <leader><C-l> :set background=light<CR>
 
 "==========================================
 " vim-powerline: https://github.com/Lokaltog/vim-powerline
-let g:Powerline_theme="solarized"
+" let g:Powerline_theme="solarized"
 let g:Powerline_symbols="compatible"
 " show status line even where there is only one window
 set laststatus=2
@@ -276,8 +282,13 @@ Plug 'junegunn/fzf.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'github/copilot.vim'
 Plug 'TysonAndre/php-vim-syntax'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 
 call plug#end()
+
+syntax enable
+colorscheme solarized8
 
 " set filetypes as typescriptreact
 autocmd BufNewFile,BufRead *.tsx,*.jsx,*.js set filetype=typescriptreact
