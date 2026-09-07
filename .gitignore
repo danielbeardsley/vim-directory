@@ -1,0 +1,3 @@
+# Plugins are installed by vim-plug; the authoritative list is the Plug
+# block in .vimrc. Run :PlugInstall to populate this directory.
+plugged/
