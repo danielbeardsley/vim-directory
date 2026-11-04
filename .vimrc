@@ -284,7 +284,6 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'hashivim/vim-terraform'
-Plug 'github/copilot.vim'
 Plug 'TysonAndre/php-vim-syntax'
 " Plug 'altercation/vim-colors-solarized'
 Plug 'lifepillar/vim-solarized8'
@@ -324,20 +323,3 @@ if has('nvim')
 endif
 
 let g:psalm_langserver_options = "--threads=2"
-
-""""""""""""""""""""""""""""
-" Copilot settings
-let g:copilot_filetypes = {
-    \ 'php': v:true,
-    \ 'javascript': v:true,
-    \ 'javascriptreact': v:true,
-    \ 'typescript': v:true,
-    \ 'typescriptreact': v:true
-    \ }
-
-" Disable Copilot for large files
-autocmd BufReadPre *
-    \ let f=getfsize(expand("<afile>"))
-    \ | if f > 100000 || f == -2
-    \ | let b:copilot_enabled = v:false
-    \ | endif
